@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px;
+}
+input[type="text"],
+input[type="date"] {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid silver;
+  display: block;
+  width: 14em;
+  margin-top: 4%;
+  font-weight: bold;
+}
+
+label {
+  display: inline-block;
+  font-weight: 300;
+  text-align: center;
+  align-items: center;
+}
+
+.button {
+  border: 1px solid #ced4da;
+  padding: 3px;
+  margin: 5px;
+  width: 100px;
+  background-color: rgb(21, 21, 203);
+  color: white;
+  border-radius: 0.3rem;
+}
+h3 {
+  top: 2em;
+  color: rgb(21, 21, 203);
+}
