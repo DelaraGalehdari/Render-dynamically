@@ -30,14 +30,23 @@ export const renderComponent = (data) => {
     /* if the key exist in KeysToComponentMap object*/
     if (typeof KeysToComponentMap[item.component] !== "undefined") {
       dataArr.push(
-        React.createElement(KeysToComponentMap[item.component], {
-          title: item.title ? item.title : null,
-          label: item.label ? item.label : null,
-          name: item.name ? item.name : null,
-          path: pathFunc(item.component),
-          text: item.text ? item.text : null,
-        })
+        React.createElement(
+          KeysToComponentMap[item.component],
+          {
+            title: item.title ? item.title : null,
+            label: item.label ? item.label : null,
+            name: item.name ? item.name : null,
+            path: pathFunc(item.component),
+            text: item.text ? item.text : null,
+          },
+          //if each item has children(in this json we don't have)
+          item.children &&
+            (typeof item.children === "string"
+              ? item.children
+              : item.children.map((c) => renderComponent(c)))
+        )
       );
+
       dataArr.push(React.createElement("br", {}));
     }
   }
